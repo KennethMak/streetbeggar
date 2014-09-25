@@ -1,0 +1,26 @@
+<div class="center">
+
+	<%= link_to "Create a Project", new_project_url %></br>
+
+	<div class="row">
+		<% @projects.each do |project| %>
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail">
+				<h3><%= project.name %></h3>
+				<div class="caption">
+
+					<p><%= project.description %></p>
+					<p><%= project.funding_goal %></p>
+					<p><%= project.start_date %></p>
+					<p><%= project.end_date %></p>
+
+					<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					<% end %>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
