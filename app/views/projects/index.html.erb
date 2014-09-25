@@ -1,4 +1,4 @@
-<div class="center">
+<div class="container">
 
 	<%= link_to "Create a Project", new_project_url %></br>
 
@@ -14,13 +14,14 @@
 					<p><%= project.start_date %></p>
 					<p><%= project.end_date %></p>
 
-					<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					<% end %>
+					<p>
+						 <%= link_to 'Show', project %> 	
+					</p>
 					
 				</div>
 			</div>
 		</div>
+		<% end %>
 	</div>
-
 </div>
 
