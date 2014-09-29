@@ -7,6 +7,9 @@
 <strong> Ends: </strong>
 <p><%= @project.end_date %></p>
 
+<strong> Funding Goal: </strong>
+<p><%= @project.funding_goal %></p>
+
 <strong> Rewards: </strong>
 
 <% @project.rewards.each do |reward| %>
@@ -14,6 +17,8 @@
 <p>Pledge <%= number_to_currency(reward.amount) %> or more:</p>
 
 <p><%= reward.description %></p>
+
+<p><%= link_to "Pledge", reward.description %></p>
 
 <% end %>
 
