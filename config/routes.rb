@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :projects 
   resources :users, only: [:new, :create]
+
+  root to: "projects#index"
   # resources :sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

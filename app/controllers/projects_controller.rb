@@ -1,7 +1,13 @@
 class ProjectsController < ApplicationController
+	before_action :authenticate_user!
+	before_action :user_signed_in?, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@projects = Project.all
+		@projects = if params[:search]
+			Project.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+		else
+			Project.all
+		end
 	end
 
 	def show
@@ -43,7 +49,7 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-		params.require(:project).permit(:name, :description, :funding_goal, :start_date, :end_date, rewards_attributes: [:amount, :description])
+		params.require(:project).permit(:name, :description, :funding_goal, :start_date, :end_date, rewards_attributes: [:id, :amount, :description, :_destroy])
 	end
 
 end

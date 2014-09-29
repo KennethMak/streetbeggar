@@ -10,12 +10,23 @@
 				<div class="caption">
 
 					<p><%= project.description %></p>
+					<strong> Funding Goal: </strong>
 					<p><%= project.funding_goal %></p>
-					<p><%= project.start_date %></p>
-					<p><%= project.end_date %></p>
+					<strong> Start Date: </strong>
+					<p><%= project.start_date.to_date %></p>
+					<strong> End Date: </strong>
+					<p><%= project.end_date.to_date %></p>
 
 					<p>
-						 <%= link_to 'Show', project %> 	
+						<%= link_to 'Show', project %> 	
+					</p>
+
+					<p>
+						<%= link_to 'Delete', project, method: :delete, data: {confirm: "Are you sure you want to delete?"}%>
+					</p>
+					
+					<p>
+						Project created by: <%= project.creator.try(:email) %> 	
 					</p>
 					
 				</div>

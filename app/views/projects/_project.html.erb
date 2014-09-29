@@ -1,5 +1,19 @@
-	
-<p><%= @project.name %></p>
+<strong> Description: </strong>
 <p><%= @project.description %></p>
+
+<strong> Started: </strong>
 <p><%= @project.start_date %></p>
+
+<strong> Ends: </strong>
 <p><%= @project.end_date %></p>
+
+<strong> Rewards: </strong>
+
+<% @project.rewards.each do |reward| %>
+
+<p>Pledge <%= number_to_currency(reward.amount) %> or more:</p>
+
+<p><%= reward.description %></p>
+
+<% end %>
+
