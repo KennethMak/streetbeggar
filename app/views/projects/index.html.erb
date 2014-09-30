@@ -8,7 +8,7 @@
 			<div class="thumbnail">
 				<h3><%= project.name %></h3>
 				<div class="caption">
-
+					<p><%= image_tag project.image.url(:medium) %></p>
 					<p><%= project.description %></p>
 					<strong> Funding Goal: </strong>
 					<p><%= project.funding_goal %></p>
